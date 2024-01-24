@@ -8,4 +8,10 @@ require_relative "user_text/version"
 
 module UserText
   extend ::UserText::Helper
+
+  class << self
+    def format(text)
+      user_text(text)
+    end
+  end
 end
