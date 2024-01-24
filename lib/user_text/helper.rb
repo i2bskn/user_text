@@ -5,17 +5,17 @@ module UserText
     end
 
     def nl2br(text)
-      text.gsub(/\R/) { %Q{<br>} }
+      text.gsub(/\R/) { %(<br>) }
     end
 
     def url2a(text)
-      text.gsub(URI::DEFAULT_PARSER.make_regexp(%w[http https])) {
-        %Q{<a href="#{Regexp.last_match(0)}" target="_blank">#{Regexp.last_match(0)}</a>}
-      }
+      text.gsub(URI::DEFAULT_PARSER.make_regexp(%w[http https])) do
+        %(<a href="#{Regexp.last_match(0)}" target="_blank">#{Regexp.last_match(0)}</a>)
+      end
     end
 
     def email2a(text)
-      text.gsub(/[\w+\-.]+@[a-z\d\-.]+\.[a-z]+/i) { %Q{<a href="mailto:#{Regexp.last_match(0)}">#{Regexp.last_match(0)}</a>} }
+      text.gsub(/[\w+\-.]+@[a-z\d\-.]+\.[a-z]+/i) { %(<a href="mailto:#{Regexp.last_match(0)}">#{Regexp.last_match(0)}</a>) }
     end
 
     def user_text_sanitize(text)

@@ -1,0 +1,20 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.0
+
+# String literals use double quotes.
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+# Do not use frozen_string_literal comment.
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 160
